@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-
+import joke from "./utilities/API"
+import axios from "axios"
 function App() {
+  const [theJoke, setTheJoke] = useState(null);
+  
+  useEffect(() => {
+    let cancel
+    joke()
+      .then(response =>{
+        setTheJoke(response.data.content)
+        new axios.CancelToken(c => cancel = c)
+        return () => cancel()
+      })
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {theJoke}
     </div>
   );
 }
