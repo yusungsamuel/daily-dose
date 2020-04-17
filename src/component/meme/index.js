@@ -1,32 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import "./style.scss";
-import API from  "../../utilities/API";
+import API from "../../utilities/API";
 import axios from "axios";
 import Card from "../card";
 import Button from "../button";
 
-export default function Meme (){
-    const [memeArr, setMemeArr] = useState(null);
-    const [randomNumber, setRandomNumber] = useState(0)
+export default function Meme() {
+    const [theMeme, setTheMeme] = useState(null);
 
     useEffect(() => {
         let cancel
         API.meme()
             .then(response => {
-                console.log(response.data.data.memes)
-                setMemeArr(response.data.data.memes)
+                console.log(response.data.url)
+                setTheMeme(response.data.url)
                 new axios.CancelToken(c => cancel = c)
                 return () => cancel()
             })
     }, []);
 
-    const handleClick = ()=>{
-        setRandomNumber(Math.floor(Math.random() *100))
+    const handleClick = () => {
+        let cancel
+        API.meme()
+            .then(response => {
+                console.log(response.data.url)
+                setTheMeme(response.data.url)
+                new axios.CancelToken(c => cancel = c)
+                return () => cancel()
+            })
     }
+
 
     return (
         <Card>
-            {memeArr!=null? <img src={memeArr[randomNumber]["url"]}/> : <div></div>}
+            <img src={theMeme} />
             <Button click={handleClick} name="New Meme"></Button>
         </Card>
     )
