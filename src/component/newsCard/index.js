@@ -1,11 +1,27 @@
-import React from  "react";
+import React from "react";
 import "./style.scss";
 
-export default function NewsCard (){
+export default function NewsCard(props) {
     return (
-        <div className="news-card">
-            <div className="img"><img src="https://4.bp.blogspot.com/--MLiLP-rtO4/XnTPlCyuC0I/AAAAAAAAWXw/5TWkOIWM8AUcjNxnNKzk-Bt1ekmxsl1ewCLcBGAsYHQ/w914-h514-p-k-no-nu/shinobu-kocho-insect-pillar-kimetsu-no-yaiba-uhdpaper.com-4K-7.1406-wp.thumbnail.jpg" alt="image"/></div>
-            <div className="content"><p>sdfhjg sdjhfgds hjgfjhdsgfhjg dsjhfgsdjh gfjhdsghj fghjs sdfhjg sdjhfgds hjgfjhdsgfhjg dsjhfgsdjh gfjhdsghj fghjs sdfhjg sdjhfgds hjgfjhdsgfhjg dsjhfgsdjh gfjhdsghj fghjs</p></div>
+        <div class={"blog-card " + props.alt} >
+            <div class="meta">
+                <div class="photo" style={{ "background-image": "url(" + props.image + ")" }}></div>
+                <ul class="details">
+                    <li class="author">Author: {props.author}</li>
+                    <li class="date">{props.time}</li>
+                    <li class="tags">
+                        Source: {props.source}
+                    </li>
+                </ul>
+            </div>
+            <div class="description">
+                <h1>{props.title}</h1>
+                <h2>Description</h2>
+                <p> {props.description}</p>
+                <p class="read-more">
+                    <a href={props.url}>Read More</a>
+                </p>
+            </div>
         </div>
     )
 }

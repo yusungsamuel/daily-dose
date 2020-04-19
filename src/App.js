@@ -13,7 +13,6 @@ function App() {
       <Joke></Joke>
       <Meme></Meme>
       <News></News>
-      <NewsCard></NewsCard>
     </div>
   );
 }
