@@ -1,0 +1,30 @@
+.news-card {
+    height: 200px;
+    width:400px;
+    margin:10vh;
+    border:solid black 1px;
+    display: flex;
+    flex-direction: row;
+    overflow:hidden;
+    .img{
+        height:100%;
+        flex-basis:40%;
+        position: relative;
+        overflow: hidden;
+        img{
+            object-fit: cover;
+            height:100%
+
+        }
+        &:hover{
+            flex-basis:100%
+        }
+    };
+    .content{
+        flex-basis: 60%;
+        transform: skewX(-3deg);
+        background: #fff;
+        z-index: -1;
+    }
+
+}

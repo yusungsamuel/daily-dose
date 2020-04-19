@@ -30,6 +30,9 @@ export default function News() {
             {theNews.length !== 0 &&
                 <div>
                     <header>{theNews[num]["title"]}</header>
+                    <p>Author: {theNews[num]["author"]}</p>
+            <p>Source: {theNews[num]["source"]["name"]}</p>
+                    <p>Description: {theNews[num]["description"]}</p>
                     <img src={theNews[num]["urlToImage"]} />
                     <a href={theNews[num]["url"]}>Original Article</a>
                 </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Joke from "./component/joke"
 import Meme from "./component/meme"
 import News from "./component/news"
+import NewsCard from "./component/newsCard"
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Joke></Joke>
       <Meme></Meme>
       <News></News>
+      <NewsCard></NewsCard>
     </div>
   );
 }
