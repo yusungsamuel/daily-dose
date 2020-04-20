@@ -28,12 +28,7 @@ function Card(props) {
     return (
         <div className="card-container">
             <div onClick={handleClick} className={"card card" + props.num}>
-                <div className="front">
-                    A
-                </div>
-                <div className="back">
-                    B
-                 </div>
+                {props.children}
             </div>
         </div>
     )

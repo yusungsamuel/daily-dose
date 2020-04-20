@@ -3,7 +3,7 @@ import "./style.scss";
 import Card from "../card"
 import API from "../../utilities/API"
 import axios from "axios"
-import Button from  "../button"
+import Button from "../button"
 
 export default function Joke() {
     const [theJoke, setTheJoke] = useState(null);
@@ -12,7 +12,13 @@ export default function Joke() {
         let cancel
         API.joke()
             .then(response => {
-                setTheJoke(response.data.content)
+                let joke = response.data.content;
+                if (joke.includes("?")) {
+                    setTheJoke(joke.split("?"))
+                }
+                else {
+                    setTheJoke([joke, "This is not a two part joke!"])
+                }
                 new axios.CancelToken(c => cancel = c)
                 return () => cancel()
             })
@@ -22,7 +28,13 @@ export default function Joke() {
         let cancel
         API.joke()
             .then(response => {
-                setTheJoke(response.data.content)
+                let joke = response.data.content;
+                if (joke.includes("?")) {
+                    setTheJoke(joke.split("?"))
+                }
+                else {
+                    setTheJoke([joke, "This is not a two part joke!"])
+                }
                 new axios.CancelToken(c => cancel = c)
                 return () => cancel()
             })
@@ -30,11 +42,28 @@ export default function Joke() {
 
     return (
         <Card num="1">
-            {/* <p className="content">{theJoke}</p>
-            <Button
-                name="new joke"
-                click={handleNewJoke}
-            ></Button> */}
+            {
+                theJoke && theJoke.map((part, i) => {
+                    if (i === 0) {
+                        return (
+                            <div className="front">
+                                <p>{part}</p>
+                            </div>
+                        )
+                    }
+                    else {
+                        return (
+                            <div className="back">
+                                <p>{part}</p>
+                                <Button 
+                                    click={handleNewJoke}
+                                    name="New Joke"
+                                ></Button>
+                            </div>
+                        )
+                    }
+                })
+            }
         </Card>
     )
 };

@@ -1,8 +1,8 @@
 .card-container{
     font-family: 'Open Sans', sans serif;
-    font-size: 120px;
+    font-size: 20px;
     font-weight: bold;
-
+    cursor: pointer;
     width: 400px;
     height: 250px;
     margin: 80px auto;
@@ -31,6 +31,9 @@
             justify-content: center;
             align-items: center;
             backface-visibility: hidden;
+            p{
+                margin: 20%;
+            }
         }
 
         .front
@@ -49,6 +52,8 @@
 
             color: #2196f3;
             background: #fff;
+            display: flex;
+            flex-direction: column;
         }
     }
 
