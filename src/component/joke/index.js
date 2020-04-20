@@ -29,12 +29,12 @@ export default function Joke() {
     }
 
     return (
-        <Card>
-            <p className="content">{theJoke}</p>
+        <Card num="1">
+            {/* <p className="content">{theJoke}</p>
             <Button
                 name="new joke"
                 click={handleNewJoke}
-            ></Button>
+            ></Button> */}
         </Card>
     )
 };
