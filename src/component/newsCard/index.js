@@ -9,14 +9,13 @@ export default function NewsCard(props) {
                 <ul class="details">
                     <li class="author">Author: {props.author}</li>
                     <li class="date">{props.time}</li>
-                    <li class="tags">
+                    <li class="source">
                         Source: {props.source}
                     </li>
                 </ul>
             </div>
             <div class="description">
                 <h1>{props.title}</h1>
-                <h2>Description</h2>
                 <p> {props.description}</p>
                 <p class="read-more">
                     <a href={props.url}>Read More</a>

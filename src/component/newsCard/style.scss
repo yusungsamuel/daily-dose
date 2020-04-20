@@ -79,8 +79,8 @@
         content: "\f133";
       }
   
-      .tags {
-        ul:before {
+      .source {
+        &:before {
           font-family: FontAwesome;
           content: "\f02b";
           margin-right: 10px;
@@ -98,21 +98,11 @@
       background: $color_white;
       position: relative;
       z-index: 1;
-      h1,
-      h2 {
-        font-family: Poppins, sans-serif;
-      }
       h1 {
+        font-family: Poppins, sans-serif;
         line-height: 1;
         margin: 0;
         font-size: 1.7rem;
-      }
-      h2 {
-        font-size: 1rem;
-        font-weight: 300;
-        text-transform: uppercase;
-        color: $color_grey_dark;
-        margin-top: 5px;
       }
       .read-more {
         text-align: right;
