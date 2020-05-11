@@ -40,6 +40,14 @@ const API = {
             "method": "GET",
             "url": url
         })
+    },
+    fortuneCookie: () =>  {
+        return (
+            axios({
+                "method" : "GET",
+                "url": "http://fortunecookieapi.herokuapp.com/v1/cookie?fortuneId=&lottoId=&lessonId=&limit="
+            })
+        )
     }
 }
 

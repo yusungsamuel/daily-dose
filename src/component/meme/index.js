@@ -12,7 +12,7 @@ export default function Meme() {
         let cancel
         API.meme()
             .then(response => {
-                console.log(response.data.url)
+                // console.log(response.data.url)
                 setTheMeme(response.data.url)
                 new axios.CancelToken(c => cancel = c)
                 return () => cancel()
@@ -23,7 +23,7 @@ export default function Meme() {
         let cancel
         API.meme()
             .then(response => {
-                console.log(response.data.url)
+                // console.log(response.data.url)
                 setTheMeme(response.data.url)
                 new axios.CancelToken(c => cancel = c)
                 return () => cancel()
@@ -32,9 +32,14 @@ export default function Meme() {
 
 
     return (
-        <Card>
-            <img src={theMeme} />
-            <Button click={handleClick} name="New Meme"></Button>
+        <Card num="meme">
+            <div className="front">
+                <img src={theMeme} />
+            </div>
+            <div className="back">
+                <Button click={handleClick} name="New Meme"></Button>
+            </div>
+
         </Card>
     )
 }

@@ -13,7 +13,7 @@ export default function News() {
         let cancel
         API.news()
             .then(response => {
-                console.log(response.data.articles)
+                // console.log(response.data.articles)
                 setTheNews(response.data.articles)
                 new axios.CancelToken(c => cancel = c)
                 return () => cancel()

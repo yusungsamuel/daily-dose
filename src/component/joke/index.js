@@ -41,7 +41,7 @@ export default function Joke() {
     }
 
     return (
-        <Card num="1">
+        <Card num="joke">
             {
                 theJoke && theJoke.map((part, i) => {
                     if (i === 0) {

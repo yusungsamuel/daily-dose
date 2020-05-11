@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.2.1",
     "animejs": "^3.2.0",
     "axios": "^0.19.2",
+    "gsap": "^3.2.6",
+    "multiple.js": "0.0.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
