@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import API from "../../utilities/API";
 import axios from "axios"
-import  gsap from "gsap";
+import gsap from "gsap";
 import "./style.scss";
 
 export default function FortuneCookie() {
@@ -31,27 +31,27 @@ export default function FortuneCookie() {
 
 
         //tl.set($('.fortune-message'),{opacity:0});
-        // tl.to(fElement, 0.1, { rotation: -5, delay: 2 });
-        // tl.to(fElement, 0.1, { rotation: 5 });
-        // tl.to(fElement, 0.1, { rotation: -5 });
-        // tl.to(fElement, 0.1, { rotation: 5 });
-        // tl.to(fElement, 0.1, { rotation: -5 });
-        // tl.to(fElement, 0.1, { rotation: 0 });
+        tl.to(fElement, 0.1, { rotation: -5, delay: 2 });
+        tl.to(fElement, 0.1, { rotation: 5 });
+        tl.to(fElement, 0.1, { rotation: -5 });
+        tl.to(fElement, 0.1, { rotation: 5 });
+        tl.to(fElement, 0.1, { rotation: -5 });
+        tl.to(fElement, 0.1, { rotation: 0 });
         tl.addLabel("break", "+=0.3");
         tl.to(left, 0.5, { rotation: -45, x: -70, y: 70 }, "break");
         tl.to(right, 0.5, { rotation: 45, x: 70, y: 70 }, "break");
 
-        tl.set(message,{opacity:1});
+        tl.set(message, { opacity: 1 });
         tl.from(messageSpan, 1, { x: '110%' }, "break");
     }, []);
 
 
     return (
         <div className="fortune-wrapper">
-            <div className="fortune" ref={e =>{fElement = e}}>
-                <div className="fortune-left" ref={e =>{left = e}}></div>
-                <div className="fortune-right" ref={e =>{right = e}}></div>
-    <div className="fortune-message" ref={e =>{message = e}}><p ref={e =>{messageSpan = e}}>{fortune}</p></div>
+            <div className="fortune" ref={e => { fElement = e }}>
+                <div className="fortune-left" ref={e => { left = e }}></div>
+                <div className="fortune-right" ref={e => { right = e }}></div>
+                <div className="fortune-message" ref={e => { message = e }}><p ref={e => { messageSpan = e }}>{fortune}</p></div>
             </div>
         </div>
     )

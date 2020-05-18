@@ -4,14 +4,26 @@ import Meme from "./component/meme"
 import News from "./component/news"
 import NewsCard from "./component/newsCard"
 import FortuneCookie from "./component/fortuneCookie"
-function App() {
+import "./App.scss"
+require("dotenv").config()
 
+function App() {
+  console.log(process.env.REACT_APP_NEWS_API_KEY)
   return (
     <div className="app">
-      <Joke></Joke>
-      <Meme></Meme>
-      <News></News>
-      <FortuneCookie></FortuneCookie>
+
+      <div className="grid">
+        <div className="news"><News></News></div>
+        <Joke></Joke>
+        <Meme></Meme>
+        <div className="grid-item">Button</div>
+        <div className="grid-item">Button</div>
+        <div className="grid-item">Button</div>
+        <div className="grid-item">Button</div>
+        <div className="grid-item">Button</div>
+        <div className="grid-item">Button</div>
+        {/* <FortuneCookie></FortuneCookie> */}
+      </div>
     </div>
   );
 }

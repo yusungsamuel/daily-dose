@@ -1,5 +1,5 @@
 import axios from "axios"
-
+require("dotenv").config();
 
 const API = {
     joke: () => {
@@ -35,7 +35,7 @@ const API = {
     news: () => {
         let url = 'http://newsapi.org/v2/top-headlines?' +
             'country=us&' +
-            'apiKey=9e5bdc33db924cbda8063c96df4d04c3';
+            'apiKey=' + process.env.REACT_APP_NEWS_API_KEY;
         return axios({
             "method": "GET",
             "url": url
