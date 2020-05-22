@@ -33,18 +33,30 @@ const API = {
         )
     },
     news: () => {
-        let url = 'http://newsapi.org/v2/top-headlines?' +
+        let url = '/v2/top-headlines?' +
             'country=us&' +
-            'apiKey=' + process.env.REACT_APP_NEWS_API_KEY;
+            'apiKey=9e5bdc33db924cbda8063c96df4d04c3' 
+            // + process.env.REACT_APP_NEWS_API_KEY;
+        return axios({
+            "method": "GET",
+            "url": url,
+            "headers": {
+                'Access-Control-Allow-Origin': '*'
+            }
+        })
+    },
+    weather: (lat, long) => {
+        let url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=" + process.env.REACT_APP_WEATHER_API_KEY
         return axios({
             "method": "GET",
             "url": url
         })
+
     },
-    fortuneCookie: () =>  {
+    fortuneCookie: () => {
         return (
             axios({
-                "method" : "GET",
+                "method": "GET",
                 "url": "http://fortunecookieapi.herokuapp.com/v1/cookie?fortuneId=&lottoId=&lessonId=&limit="
             })
         )
