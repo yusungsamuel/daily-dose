@@ -13,8 +13,10 @@ function App() {
 
       <div className="grid">
         <div className="news"><News></News></div>
-        <Joke></Joke>
-        <Meme></Meme>
+        <div className="grid-item meme"><Meme></Meme></div>
+
+        <div className="grid-item"><Joke></Joke></div>
+        
         <Weather></Weather>
         <div className="grid-item">Button</div>
         <div className="grid-item">Button</div>

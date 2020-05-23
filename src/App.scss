@@ -12,8 +12,14 @@
         background-color: #424242;
         }
     }
+    .meme{
+        grid-column-end: span 2;
+        grid-row-end: span 2;
+    }
+    
 }
 
 .news {
-    grid-column: 1/ end;
+    grid-column-end: span 4;
+    grid-row-end: span 1;
 }

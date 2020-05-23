@@ -46,7 +46,8 @@ const API = {
         })
     },
     weather: (lat, long) => {
-        let url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=" + process.env.REACT_APP_WEATHER_API_KEY
+        let url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=d6ca85092b836205159ee6874c2d877e" 
+        // process.env.REACT_APP_WEATHER_API_KEY
         return axios({
             "method": "GET",
             "url": url
