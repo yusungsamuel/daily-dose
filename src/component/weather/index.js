@@ -46,12 +46,12 @@ export default function Weather() {
     data === null? 
     <div>The weather data for your location is currently unavailable. Please try again later</div>
     :
-    <div>
-        <p>{data.weather_descriptions}</p>
-        <img src={data.weather_icons[0]} alt="weather icon"></img>
-        <p>{data.temperature}°C</p>
+    <div className="weather-card">
+        <p>Current Weather: {data.weather_descriptions}<img src={data.weather_icons[0]} alt="weather icon"></img></p>
+        
+        <p>Temperature: {data.temperature}°C</p>
         <p>Humidity: {data.humidity}%</p>
-    <p>Cloud Cover: {data.cloudcover}%</p>
+        <p>Cloud Cover: {data.cloudcover}%</p>
     </div>
     )
 }
