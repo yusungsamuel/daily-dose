@@ -3,7 +3,7 @@ import "./style.scss"
 
 function Button(props) {
     return (
-        <button className="button uk-button uk-button-primary" onClick={props.click}>{props.name}</button>
+        <button className="button uk-button uk-button-secondary" onClick={props.click}>{props.name}</button>
     )
 };
 

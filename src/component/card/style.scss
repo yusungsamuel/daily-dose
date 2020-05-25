@@ -39,8 +39,8 @@
 
         .front
         {
-            color: #fff;
-            background: #2196f3;
+            color: white;
+            background: rgba(51, 51, 51, 0.226);
         }
 
         .back
@@ -51,8 +51,8 @@
 
             transform: rotateY(180deg);
 
-            color: #2196f3;
-            background: #fff;
+            color: white;
+            background: rgba(51, 51, 51, 0.226);
             display: flex;
             flex-direction: column;
         }
