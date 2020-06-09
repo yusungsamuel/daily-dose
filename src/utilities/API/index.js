@@ -47,11 +47,11 @@ const API = {
     },
     weather: (lat, long) => {
         //open weather API
-        // let url = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + long + "&appid=d6ca85092b836205159ee6874c2d877e" 
+        let url = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=current,minutely,hourly&appid=d6ca85092b836205159ee6874c2d877e" 
         // process.env.REACT_APP_WEATHER_API_KEY
 
         //weather stack API
-        let url = "http://api.weatherstack.com/current?access_key=135d3da64ccdcabadcc3e8323682c039&query=" + lat + "," + long
+        // let url = "http://api.weatherstack.com/current?access_key=135d3da64ccdcabadcc3e8323682c039&query=" + lat + "," + long
         return axios({
             "method": "GET",
             "url": url

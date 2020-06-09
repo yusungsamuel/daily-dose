@@ -24,8 +24,8 @@ export default function Weather() {
         let cancel            
         API.weather(lat, long)
         .then(response => {
-            console.log(response.data.current)
-            setData(response.data.current)
+            console.log(response.data.daily)
+            setData(response.data.daily)
             new axios.CancelToken(c => cancel = c)
             return () => cancel()
         })
@@ -43,15 +43,15 @@ export default function Weather() {
     // }, [])
 
     return (
-    data === null? 
+    // data === null? 
     <div>The weather data for your location is currently unavailable. Please try again later</div>
-    :
-    <div className="weather-card">
-        <p>Current Weather: {data.weather_descriptions}<img src={data.weather_icons[0]} alt="weather icon"></img></p>
+    // :
+    // <div className="weather-card">
+    //     <p>Current Weather: {data.weather_descriptions}<img src={data.weather_icons[0]} alt="weather icon"></img></p>
         
-        <p>Temperature: {data.temperature}°C</p>
-        <p>Humidity: {data.humidity}%</p>
-        <p>Cloud Cover: {data.cloudcover}%</p>
-    </div>
+    //     <p>Temperature: {data.temperature}°C</p>
+    //     <p>Humidity: {data.humidity}%</p>
+    //     <p>Cloud Cover: {data.cloudcover}%</p>
+    // </div>
     )
 }
