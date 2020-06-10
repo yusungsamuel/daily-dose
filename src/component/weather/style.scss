@@ -1,11 +1,39 @@
-.weather-card{
-    display:column;
-    justify-content: center;
-    align-items: center;
-    margin: 10%;
-    color:white;
-    font-family: 'Open Sans', sans serif;
-    font-size: 20px;
-    font-weight: bold;
-    background-image: url("https://media3.giphy.com/media/j3EExPtEdN2tbJL79M/giphy.gif?cid=ecf05e47ba8336ea7c366dbb3de1372a5bfff23ff94d756e&rid=giphy.gif");
-}
+.weather-container{
+    width: 400px;
+    height: 650px;
+    color: white;
+    background-color: rgb(16, 112, 177);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    // justify-content: center;
+    // align-items: center;;
+    .city{
+        font-size: 2rem;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    .temperature{
+        font-size: 3rem;;
+    }
+    .date{
+        float: left;
+    };
+    .range{
+        float: right;
+    }
+    .scroll{
+        clear: both; 
+        overflow-x: scroll ;
+        display: flex;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    };
+    .scroll > div{
+        flex: 0 0 auto;
+    };
+}   
