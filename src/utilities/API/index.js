@@ -47,7 +47,7 @@ const API = {
     },
     weather: (lat, long) => {
         //open weather API
-        let url = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&exclude=current,minutely&appid=d6ca85092b836205159ee6874c2d877e" 
+        let url = "https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + lat + "&lon=" + long + "&exclude=current,minutely&appid=d6ca85092b836205159ee6874c2d877e" 
         // process.env.REACT_APP_WEATHER_API_KEY
 
         //weather stack API

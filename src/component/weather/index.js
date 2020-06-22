@@ -34,17 +34,20 @@ export default function Weather() {
             })
     }, [long || lat])
 
+    const date = new Date()
+    
+    console.log(date)
     return (        
         <div className="weather-container">
             {hourly === null ?
                 <div>The weather data for your location is currently unavailable. Please try again later</div>
                 :
                 <div>
-                    <div className="topSection">
+                    <div className="topSection">  
                         <p className="city">(City Name)</p>
                         <p className="description">{daily[0].weather[0].description}</p>
-                        <p className="temperature">{daily[0].temp.day}°</p>
-                        <span className="date">(Date): Today</span> <span className="range">(High | Low)</span>
+                        <p className="temperature">{Math.round(daily[0].temp.day)}°</p>
+                        <span className="date">(Date): Today</span> <span className="range">({Math.round(daily[0].temp.max)} | {Math.round(daily[0].temp.min)})</span>
                     </div>
                     <div className="scroll">
                         {
