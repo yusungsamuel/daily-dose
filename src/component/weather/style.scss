@@ -1,6 +1,7 @@
 .weather-container{
     width: 400px;
     height: 650px;
+    padding: 10px;
     color: white;
     background-color: rgb(16, 112, 177);
     display: flex;
@@ -19,9 +20,11 @@
     }
     .date{
         float: left;
+        word-spacing: 10px;
     };
     .range{
         float: right;
+        word-spacing: 20px;;
     }
     .scroll{
         clear: both; 
