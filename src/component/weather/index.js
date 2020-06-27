@@ -8,7 +8,7 @@ export default function Weather() {
     const [long, setLong] = useState(-122.4194);
     const [daily, setDaily] = useState(null)
     const [hourly, setHourly] = useState(null)
-    const [date, setDate] = useState(new Date())
+    let date = new Date()
     useEffect(() => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(success);
@@ -33,7 +33,6 @@ export default function Weather() {
                 return () => cancel()
             })
     }, [long || lat])
-
     const renderSwitch = (num) => {
         switch (num) {
             case 0:
@@ -58,6 +57,19 @@ export default function Weather() {
         }
     }
 
+    const calculateHours = (num) => {
+        if(num === 0){
+            return "12AM"
+        }
+        else if(num< 12){
+            return num + "AM"
+        }
+        else {
+            return num%12 === 0 ?  "12PM" : num%12+"PM"
+        }
+    }
+
+
     return (
         <div className="weather-container">
             {hourly === null ?
@@ -73,19 +85,12 @@ export default function Weather() {
                     <div className="scroll">
                         {
                             hourly.map((h, i) => {
-
-                                if ((date.getHours() + i) % 24 === 12) {
-                                    return (
-                                        <div key={i}>
-                                            <div>{i > 0 ? ((date.getHours() + i) % 24 >= 12 ? (date.getHours() + i - 12) % 23 + "PM" : (date.getHours() + i) % 24 + "AM") : "Now"}</div>
-                                            <div><img src={" http://openweathermap.org/img/wn/" + h.weather[0].icon + "@2x.png"} /></div>
-                                        </div>
-                                    )
+                                if(i>0){
+                                    date.setHours(date.getHours()+1)
                                 }
-
                                 return (
                                     <div key={i}>
-                                        <div>{i > 0 ? ((date.getHours() + i) % 24 >= 12 ? (date.getHours() + i - 12) % 23 + "PM" : (date.getHours() + i) % 24 + "AM") : "Now"}</div>
+                                        <div>{i>0 ? calculateHours(date.getHours()): "Now"}</div>
                                         <div><img src={" http://openweathermap.org/img/wn/" + h.weather[0].icon + "@2x.png"} /></div>
                                     </div>
                                 )
