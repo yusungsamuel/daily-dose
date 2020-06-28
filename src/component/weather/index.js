@@ -8,6 +8,7 @@ export default function Weather() {
     const [long, setLong] = useState(-122.4194);
     const [daily, setDaily] = useState(null)
     const [hourly, setHourly] = useState(null)
+    const [city, setCity] = useState("San Francisco")
     let date = new Date()
     useEffect(() => {
         if (navigator.geolocation) {
@@ -32,6 +33,10 @@ export default function Weather() {
                 new axios.CancelToken(c => cancel = c)
                 return () => cancel()
             })
+        // API.reverseGeo(lat, long)
+        //     .then(response => {
+        //         setCity(response.data["results"][0]["components"]["town"])
+        //     })
     }, [long || lat])
     const renderSwitch = (num) => {
         switch (num) {
@@ -77,7 +82,7 @@ export default function Weather() {
                 <div>
                     {console.log(date)}
                     <div className="topSection">
-                        <p className="city">(City Name)</p>
+                        <p className="city">{city}</p>
                         <p className="description">{daily[0].weather[0].description}</p>
                         <p className="temperature">{Math.round(daily[0].temp.day)}°</p>
                         <span className="date">{renderSwitch(date.getDay())} Today</span> <span className="range">{Math.round(daily[0].temp.max)} {Math.round(daily[0].temp.min)}</span>

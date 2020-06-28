@@ -58,6 +58,13 @@ const API = {
         })
 
     },
+    reverseGeo: (lat, long)=>{
+        let url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${long}&key=361bfed6b1554ec49294a48f30948f60`
+        return axios({
+            "method": "GET",
+            "url": url
+        })
+    },
     fortuneCookie: () => {
         return (
             axios({
