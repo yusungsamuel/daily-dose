@@ -24,7 +24,7 @@
     };
     .range{
         float: right;
-        word-spacing: 20px;;
+        word-spacing: 20px;
     }
     .scroll{
         clear: both; 
@@ -39,4 +39,14 @@
     .scroll > div{
         flex: 0 0 auto;
     };
+    .week-forecast{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        .weekday{
+            text-align: left;
+        };
+        .icon{
+            width: 30px;
+        }
+    }
 }   
